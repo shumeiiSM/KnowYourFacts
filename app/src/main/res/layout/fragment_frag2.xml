@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#E0E0E0"
+    android:id="@+id/linear2"
+    tools:context=".Frag2">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="I’m in love with you, and I’m not in the business of denying myself the simple pleasure of saying true things. \n\nI’m in love with you, and I know that love is just a shout into the void, and that oblivion is inevitable, and that we’re all doomed and that there will come a day when all our labor has been returned to dust, and I know the sun will swallow the only earth we’ll ever have, and I am in love with you.\n"/>
+
+    <Button
+        android:id="@+id/btnColour2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Change Color" />
+
+</LinearLayout>
