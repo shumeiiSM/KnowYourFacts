@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -27,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button btnLater;
     int reqCode = 12345;
+    int cPage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,5 +108,23 @@ public class MainActivity extends AppCompatActivity {
         } else {
             setRandom();
         }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor prefEdit = prefs.edit();
+        cPage = vPager.getCurrentItem();
+        prefEdit.putInt("current", cPage);
+        prefEdit.commit();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        cPage = prefs.getInt("current", -1);
+        vPager.setCurrentItem(cPage);
     }
 }
