@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     MyFragmentPagerAdapter adapter;
     ViewPager vPager;
 
-    Button btnLater;
+    Button btnLater, btn;
     int reqCode = 12345;
     int cPage;
 
@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
         vPager = findViewById(R.id.viewpager1);
         btnLater = findViewById(R.id.btnLater);
+        btn = findViewById(R.id.btn);
 
         FragmentManager fm = getSupportFragmentManager();
 
@@ -65,6 +66,13 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+//        btn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                vPager.setCurrentItem(0, true);
+//            }
+//        });
 
     }
 
